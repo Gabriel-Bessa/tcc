@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  postgresql-database:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=sz!]FH(ySqQR
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 5432:5432
+    container_name: auth-postgres
+  redis-database:
+    image: redis
+    command: redis-server --requirepass 123456
+    ports:
+      - 6379:6379
