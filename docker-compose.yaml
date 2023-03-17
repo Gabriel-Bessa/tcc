@@ -7,7 +7,7 @@ services:
       - POSTGRES_PASSWORD=sz!]FH(ySqQR
       - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
-      - 5432:5432
+      - 5433:5432
     container_name: auth-postgres
   redis-database:
     image: redis

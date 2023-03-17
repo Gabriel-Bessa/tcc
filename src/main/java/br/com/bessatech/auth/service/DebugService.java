@@ -6,6 +6,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Getter
 @Setter
 @Service
@@ -14,8 +17,11 @@ public class DebugService {
 
     private final DebugCache cache;
 
-    public Object getKey() {
-        return new Object();
+    public Map<String, String> getKey(String key) {
+        return cache.get(key);
     }
 
+    public void setKey(String key, HashMap<String, String> obj) {
+        cache.put(key, obj);
+    }
 }
